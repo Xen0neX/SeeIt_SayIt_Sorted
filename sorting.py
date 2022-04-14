@@ -12,8 +12,6 @@ def selection_sort(unsorted_list):
     # Auxiliary Space O(1)
     # In place
 
-    # TODO: add a test for selection_sort
-
     # iterate over all elements
     for i in range(len(unsorted_list)):
 
@@ -25,7 +23,7 @@ def selection_sort(unsorted_list):
                 min_index = j
 
         # One the loop is finished, swap the values using the index
-        unsorted_list[i], unsorted_list[min_index] = unsorted_list[min_index], unsorted_lis[i]
+        unsorted_list[i], unsorted_list[min_index] = unsorted_list[min_index], unsorted_list[i]
 
     return unsorted_list
 
