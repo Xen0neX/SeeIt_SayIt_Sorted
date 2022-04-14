@@ -1,16 +1,34 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# Arihant Kuba 14th April 2022
+# This is a project documenting various sorting algorithms in python along with the test benches to test them
+# each sort is written out as its own function and also lists its space and time complexity
 
 
-# Press the green button in the gutter to run the script.
+def selection_sort(unsorted_list):
+    # select the lowest element from an array of size n
+    # swap it with the first element of the array
+    # exclude the first element and repeat for an array of size n-1 until n is 0
+
+    # Complexity O(n^2)
+    # Auxiliary Space O(1)
+    # In place
+
+    # TODO: add a test for selection_sort
+
+    # iterate over all elements
+    for i in range(len(unsorted_list)):
+
+        # find the smallest element
+        min_index = i
+        for j in range(i+1, len(unsorted_list)):
+            # if current value in the list is smaller than the first value, swap the index to denote minimum value
+            if unsorted_list[min_index] > unsorted_list[j]:
+                min_index = j
+
+        # One the loop is finished, swap the values using the index
+        unsorted_list[i], unsorted_list[min_index] = unsorted_list[min_index], unsorted_lis[i]
+
+    return unsorted_list
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print("Executed Directly")
