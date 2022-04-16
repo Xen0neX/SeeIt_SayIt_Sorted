@@ -87,6 +87,33 @@ def recursive_bubble_sort(unsorted_list, n=None):
     # to the first call as well
     return recursive_bubble_sort(unsorted_list, n - 1)
 
+def insertion_sort(unsorted_list):
+    # use the position of elements to evaluate their positions by keys
+    # Compare each element with its predecessor, if the key element is smaller than the previous value, check the one
+    # before, Move all elements after the position the element has to be inserted up one position value and place the
+    # key element in the right place
+
+    # Complexity O(n^2)
+    # Auxiliary Space O(1)
+    # In place
+    # Stable
+
+    n = len(unsorted_list)
+
+    for i in range(1, n):
+
+        # assign the current iterator as the key
+        key = unsorted_list[i]
+
+        j = i-1
+
+        while j >= 0 and key < unsorted_list[j]:
+            unsorted_list[j+1] = unsorted_list[j]
+            j -= 1
+            unsorted_list[j+1] = key
+
+    return unsorted_list
+
 
 if __name__ == '__main__':
     print("Executed Directly")

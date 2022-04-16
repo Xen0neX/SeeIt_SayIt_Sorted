@@ -20,9 +20,14 @@ class TestSort(unittest.TestCase):
         result = sorting.bubble_sort(input_list)
         self.assertEqual(result, sorted_list)
 
-    def test_recursive_buble_sort(self):
+    def test_recursive_bubble_sort(self):
         # Testing recursive_bubble_sort with the default input and sorted lists
         result = sorting.recursive_bubble_sort(input_list)
+        self.assertEqual(result, sorted_list)
+
+    def test_insertion_sort(self):
+        # Testing insertion_sort with the default input and sorted lists
+        result = sorting.insertion_sort(input_list)
         self.assertEqual(result, sorted_list)
 
 if __name__ == '__main__':
