@@ -71,7 +71,7 @@ def recursive_bubble_sort(unsorted_list, n=None):
     # Same complexity as the normal implementation of bubble sort
 
     # For the first call, iterate over the whole list
-    if n == None:
+    if n is None:
         n = len(unsorted_list)
 
     # return the sorted list when the length is 1
@@ -115,10 +115,37 @@ def insertion_sort(unsorted_list):
         while j >= 0 and key < unsorted_list[j]:
             unsorted_list[j + 1] = unsorted_list[j]
             # Assign J as the new key (as the value was shifted, and then reduce the value to j by 1 for the next check
-            unsorted_list[j] = key
             j -= 1
 
+        unsorted_list[j+1] = key
+
     return unsorted_list
+
+
+def recursive_insertion_sort(unsorted_list, n=None):
+    # same complexity as normal insertion sort
+
+    # checks if this is the first call and assigns n
+    if n is None:
+        n = len(unsorted_list)
+
+    # return the list when the length is 1, base case
+    if n == 1:
+        return unsorted_list
+
+    # key of the unsorted list is set to the last element and j is the element just before that
+    key = unsorted_list[n - 1]
+    j = n - 2
+
+    # works the same way as normal insertion sort
+    while j >= 0 and unsorted_list[j] > key:
+        unsorted_list[j + 1] = unsorted_list[j]
+        j -= 1
+
+    unsorted_list[j + 1] = key
+
+    # recursively call the function for a list of size n-1
+    return recursive_insertion_sort(unsorted_list, n - 1)
 
 
 if __name__ == '__main__':

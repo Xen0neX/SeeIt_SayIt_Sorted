@@ -30,5 +30,10 @@ class TestSort(unittest.TestCase):
         result = sorting.insertion_sort(input_list)
         self.assertEqual(result, sorted_list)
 
+    def test_recursive_insertion_sort(self):
+        # Testing insertion_sort with the default input and sorted lists
+        result = sorting.recursive_insertion_sort(input_list)
+        self.assertEqual(result, sorted_list)
+
 if __name__ == '__main__':
     unittest.main()
